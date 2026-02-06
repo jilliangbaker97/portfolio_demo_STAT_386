@@ -1,31 +1,45 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to My Data Science Portfolio",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "",
     "section": "",
-    "text": "Welcome to my data science portfolio! This site shows my journey learning data science and analytics. Here you’ll find projects that demonstrate what I’ve learned and discovered.\n\n\nThis portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages.\n\n\n\n\nProgramming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data\n\n\n\n\n\n\n\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+    "text": "Code"
   },
   {
-    "objectID": "index.html#about-this-portfolio",
-    "href": "index.html#about-this-portfolio",
-    "title": "Welcome to My Data Science Portfolio",
-    "section": "",
-    "text": "This portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
+    "objectID": "about.html#introduction",
+    "href": "about.html#introduction",
+    "title": "",
+    "section": "Introduction",
+    "text": "Introduction\nStatistics major with a Data Science emphasis at Brigham Young University, expecting to graduate in 2027. I am currently developing strong analytical and problem-solving skills to prepare for a career in data-driven decision making.\nInterested in using data science to uncover insights, optimize processes, and support strategic decision-making. As I continue my studies, I’m building experience with tools such as R and Python and gaining a deeper understanding of data visualization, statistical modeling, and applied analytics."
   },
   {
-    "objectID": "index.html#skills-im-learning",
-    "href": "index.html#skills-im-learning",
-    "title": "Welcome to My Data Science Portfolio",
-    "section": "",
-    "text": "Programming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data"
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "",
+    "section": "Education",
+    "text": "Education\n\nBrigham Young University\nStatistics: Data Analytics Emphasis\nJan 2025 – Dec 2027\n\n\nBrigham Young University–Hawaii\nComputer Science, Accounting, and Anthropology coursework\nAug 2023 – Jul 2024"
   },
   {
-    "objectID": "index.html#my-projects",
-    "href": "index.html#my-projects",
-    "title": "Welcome to My Data Science Portfolio",
-    "section": "",
-    "text": "Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "",
+    "section": "Experience",
+    "text": "Experience\n\nResearch Assistant · Brigham Young University\nJan 2025 – Jun 2025 · Provo, UT (Hybrid)\n\nBuilt Python scripts to extract targeted records from large genealogical databases\nAutomated data cleaning and transformation pipelines\nExported structured CSV datasets for statistical modeling and storytelling\n\n\n\nOfficer – Data Science Association · Brigham Young University\nSep 2025 – Present · Provo, UT\n\nDesigned and distributed event flyers and promotional materials\nCoordinated email outreach to professors and students\nHelped grow consistent attendance of 20–30 participants per event\nSupported community building within the data science community\n\n\n\nData Science & Statistical Modeling Projects · Brigham Young University\nAug 2025 – Present · Provo, UT\n\nPerformed exploratory data analysis (EDA) using Python and R\nApplied regression, inference, and experimental design techniques\nCreated visualizations to communicate insights to diverse audiences\nPracticed model validation and interpretation\n\n\n\nOperations & Customer Analytics Experience · Various Organizations\nJun 2022 – Dec 2025 · Gilbert, AZ | Laie, HI | Provo, UT\n\nHeld multiple customer-facing and operations roles\nBalanced work responsibilities with academic commitments\nDeveloped strong time management and communication skills"
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "",
+    "section": "Skills",
+    "text": "Skills\n\nProgramming: Python, R, Java\nStatistics: EDA, regression, experimental design\nVisualization: Data storytelling, plots, summaries\nTools: Excel, Git"
+  },
+  {
+    "objectID": "about.html#get-to-know-me",
+    "href": "about.html#get-to-know-me",
+    "title": "",
+    "section": "Get to Know Me",
+    "text": "Get to Know Me\nHobbies & Interests: Hiking, skiing, snowboarding, wakeboarding, surfing, reading, cooking, traveling, working out, and spending time with family and friends.\nStrengths: Relator, Responsibility, Adaptability, Connectedness, Strategic\n\n\n\nJillian Baker"
   },
   {
     "objectID": "projects/index.html",
@@ -58,48 +72,6 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "",
-    "section": "",
-    "text": "Code"
-  },
-  {
-    "objectID": "about.html#background",
-    "href": "about.html#background",
-    "title": "About Me",
-    "section": "",
-    "text": "Write a brief introduction about yourself here. Include:\n\nYour academic background\nYour interest in data science\nYour career goals\nAny relevant experience or projects"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "",
-    "section": "Education",
-    "text": "Education\n\nBrigham Young University\nStatistics: Data Analytics Emphasis\nJan 2025 – Dec 2027\n\n\nBrigham Young University–Hawaii\nComputer Science, Accounting, and Anthropology coursework\nAug 2023 – Jul 2024"
-  },
-  {
-    "objectID": "about.html#skills-interests",
-    "href": "about.html#skills-interests",
-    "title": "About Me",
-    "section": "Skills & Interests",
-    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\n[Your specific interests, e.g., environmental data, healthcare analytics, finance, etc.]\n[Other areas you’re curious about]"
-  },
-  {
-    "objectID": "about.html#goals",
-    "href": "about.html#goals",
-    "title": "About Me",
-    "section": "Goals",
-    "text": "Goals\nDescribe what you hope to achieve through your data science journey:\n\nShort-term learning objectives\nLong-term career aspirations\nTypes of problems you want to solve"
-  },
-  {
-    "objectID": "about.html#contact",
-    "href": "about.html#contact",
-    "title": "About Me",
-    "section": "Contact",
-    "text": "Contact\n\nEmail: your.email@example.com\nGitHub: github.com/your-username\nLinkedIn: linkedin.com/in/your-profile\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
-  },
-  {
     "objectID": "projects/data-acquisition.html",
     "href": "projects/data-acquisition.html",
     "title": "Data Acquisition Project",
@@ -120,38 +92,31 @@
     ]
   },
   {
-    "objectID": "AboutMe.html",
-    "href": "AboutMe.html",
-    "title": "",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to My Data Science Portfolio",
     "section": "",
-    "text": "Code\n\n\n\n\n\n\nJillian Baker\n\n\nStatistics · Data Analytics · BYU  &lt;br&gt;\n&lt;a href=\"https://www.linkedin.com/in/jillian-baker-48093b284\"\n   style=\"opacity:0.85;\"&gt;\n   My LinkedIn↗\n\n\n\n\nIntroduction\nStatistics major with a Data Science emphasis at Brigham Young University, expecting to graduate in 2027. I am currently developing strong analytical and problem-solving skills to prepare for a career in data-driven decision making. My coursework is equipping me with a solid foundation in statistical methods, data analysis, and programming, and I’m eager to apply these skills in real-world projects and internships.\nInterested in using data science to uncover insights, optimize processes, and support strategic decision-making. As I continue my studies, I’m building experience with tools such as R and Python and gaining a deeper understanding of data visualization, statistical modeling, and applied analytics.\n\nEducation\nBrigham Young University\nStatistics: Data Analytics Emphasis Jan 2025 – Dec 2027\nBrigham Young University-Hawaii\nComputer Science, Accounting, And Anthropology coursework Aug 2023 - July 2024\n\nExperience\nResearch Assistant · Brigham Young University\nJan 2025 – Jun 2025 · Provo, UT (Hybrid)\n\nBuilt Python scripts to extract targeted records from large genealogical databases\nAutomated data cleaning and transformation pipelines\nExported structured CSV datasets for statistical modeling and storytelling\n\nOfficer – Data Science Association · Brigham Young University Sep 2025 – Present · Provo, UT\n\nDesigned and distributed event flyers and promotional materials to advertise association events\nCoordinated email outreach to professors and students to increase awareness and attendance\nHelped grow and maintain consistent event attendance of 20–30 participants per event\nSupported community building and engagement within the university data science community\n\nData Science & Statistical Modeling Projects · Brigham Young University Aug 2025 – Present · Provo, UT\n\nPerformed exploratory data analysis (EDA) using Python and R to identify trends and anomalies\nApplied statistical inference, regression, and experimental design techniques to real-world datasets\nCreated visualizations and summaries to communicate insights to technical and non-technical audiences\nPracticed model validation and interpretation to support data-driven decision-making\n\nOperations & Customer Analytics Experience · Various Organizations (Baker Cleaning, Chunky Cookies, Air Guitar, BYU JFSB) Jun 2022 – Dec 2025 · Gilbert, AZ | Laie, HI | Provo, UT (On-site)\n\nHeld multiple customer-facing and operations roles requiring reliability, accuracy, and teamwork\nBalanced work responsibilities with academic commitments\nDeveloped strong time management and communication skills\n\n\nSkills\n\n\n\nCategory\nSkills\n\n\n\n\nProgramming\nPython, R, Java\n\n\nStatistics\nEDA, regression, experimental design\n\n\nVisualization\nData storytelling, plots, summaries\n\n\nTools\nExcel, Git\n\n\n\n\nGet to Know Me\n\nHobbies & Interests: Hiking, Skiing, Skiing, Snowboarding, Wakeboarding, Wakesurfing, Surfing, reading, cooking, traveling, working out, spending time with family and friends\n\n\nStrengths: Relator, Responsibility, Adaptability, Connectedness, Strategic\n\n\n\n\nJillian Baker headshot"
+    "text": "Welcome to my data science portfolio! This site shows my journey learning data science and analytics. Here you’ll find projects that demonstrate what I’ve learned and discovered.\n\n\nThis portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages.\n\n\n\n\nProgramming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data\n\n\n\n\n\n\n\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
   },
   {
-    "objectID": "about.html#introduction",
-    "href": "about.html#introduction",
-    "title": "",
-    "section": "Introduction",
-    "text": "Introduction\nStatistics major with a Data Science emphasis at Brigham Young University, expecting to graduate in 2027. I am currently developing strong analytical and problem-solving skills to prepare for a career in data-driven decision making.\nInterested in using data science to uncover insights, optimize processes, and support strategic decision-making. As I continue my studies, I’m building experience with tools such as R and Python and gaining a deeper understanding of data visualization, statistical modeling, and applied analytics."
+    "objectID": "index.html#about-this-portfolio",
+    "href": "index.html#about-this-portfolio",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "This portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
   },
   {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "",
-    "section": "Experience",
-    "text": "Experience\n\nResearch Assistant · Brigham Young University\nJan 2025 – Jun 2025 · Provo, UT (Hybrid)\n\nBuilt Python scripts to extract targeted records from large genealogical databases\nAutomated data cleaning and transformation pipelines\nExported structured CSV datasets for statistical modeling and storytelling\n\n\n\nOfficer – Data Science Association · Brigham Young University\nSep 2025 – Present · Provo, UT\n\nDesigned and distributed event flyers and promotional materials\nCoordinated email outreach to professors and students\nHelped grow consistent attendance of 20–30 participants per event\nSupported community building within the data science community\n\n\n\nData Science & Statistical Modeling Projects · Brigham Young University\nAug 2025 – Present · Provo, UT\n\nPerformed exploratory data analysis (EDA) using Python and R\nApplied regression, inference, and experimental design techniques\nCreated visualizations to communicate insights to diverse audiences\nPracticed model validation and interpretation\n\n\n\nOperations & Customer Analytics Experience · Various Organizations\nJun 2022 – Dec 2025 · Gilbert, AZ | Laie, HI | Provo, UT\n\nHeld multiple customer-facing and operations roles\nBalanced work responsibilities with academic commitments\nDeveloped strong time management and communication skills"
+    "objectID": "index.html#skills-im-learning",
+    "href": "index.html#skills-im-learning",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "Programming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data"
   },
   {
-    "objectID": "about.html#skills",
-    "href": "about.html#skills",
-    "title": "",
-    "section": "Skills",
-    "text": "Skills\n\nProgramming: Python, R, Java\nStatistics: EDA, regression, experimental design\nVisualization: Data storytelling, plots, summaries\nTools: Excel, Git"
-  },
-  {
-    "objectID": "about.html#get-to-know-me",
-    "href": "about.html#get-to-know-me",
-    "title": "",
-    "section": "Get to Know Me",
-    "text": "Get to Know Me\nHobbies & Interests: Hiking, skiing, snowboarding, wakeboarding, surfing, reading, cooking, traveling, working out, and spending time with family and friends.\nStrengths: Relator, Responsibility, Adaptability, Connectedness, Strategic\n\n\n\nJillian Baker"
+    "objectID": "index.html#my-projects",
+    "href": "index.html#my-projects",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
   }
 ]
