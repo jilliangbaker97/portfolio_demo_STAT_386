@@ -1,48 +1,83 @@
+# Jillian Baker
+
+Statistics · Data Analytics · BYU  
+[My LinkedIn ↗](https://www.linkedin.com/in/jillian-baker-48093b284)
+
 ---
-title: "About Me"
+
+## Introduction
+
+Statistics major with a Data Science emphasis at Brigham Young University, expecting to graduate in 2027. I am currently developing strong analytical and problem-solving skills to prepare for a career in data-driven decision making.
+
+Interested in using data science to uncover insights, optimize processes, and support strategic decision-making. As I continue my studies, I’m building experience with tools such as R and Python and gaining a deeper understanding of data visualization, statistical modeling, and applied analytics.
+
 ---
-
-## Background
-
-Write a brief introduction about yourself here. Include:
-
-- Your academic background
-- Your interest in data science
-- Your career goals
-- Any relevant experience or projects
 
 ## Education
 
-- **[Your Degree]** - [University Name], [Year]
-- **Relevant Coursework**: Statistics, Data Analysis, Programming, etc.
+### Brigham Young University
 
-## Skills & Interests
+**Statistics: Data Analytics Emphasis**  
+Jan 2025 – Dec 2027
 
-### Technical Skills
-- **Programming**: Python
-- **Data Analysis**: Pandas, NumPy
-- **Visualization**: Matplotlib, Seaborn
-- **Machine Learning**: Scikit-learn
-- **Tools**: Jupyter Notebooks, Git/GitHub
+### Brigham Young University–Hawaii
 
-### Areas of Interest
-- [Your specific interests, e.g., environmental data, healthcare analytics, finance, etc.]
-- [Other areas you're curious about]
-
-## Goals
-
-Describe what you hope to achieve through your data science journey:
-
-- Short-term learning objectives
-- Long-term career aspirations
-- Types of problems you want to solve
-
-## Contact
-
-- **Email**: your.email@example.com
-- **GitHub**: [github.com/your-username](https://github.com/your-username)
-- **LinkedIn**: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
+Computer Science, Accounting, and Anthropology coursework  
+Aug 2023 – Jul 2024
 
 ---
 
-*This portfolio showcases my learning progress and projects completed during my data science studies.*
+## Experience
+
+### Research Assistant · Brigham Young University
+
+_Jan 2025 – Jun 2025 · Provo, UT (Hybrid)_
+
+- Built Python scripts to extract targeted records from large genealogical databases
+- Automated data cleaning and transformation pipelines
+- Exported structured CSV datasets for statistical modeling and storytelling
+
+### Officer – Data Science Association · Brigham Young University
+
+_Sep 2025 – Present · Provo, UT_
+
+- Designed and distributed event flyers and promotional materials
+- Coordinated email outreach to professors and students
+- Helped grow consistent attendance of 20–30 participants per event
+- Supported community building within the data science community
+
+### Data Science & Statistical Modeling Projects · Brigham Young University
+
+_Aug 2025 – Present · Provo, UT_
+
+- Performed exploratory data analysis (EDA) using Python and R
+- Applied regression, inference, and experimental design techniques
+- Created visualizations to communicate insights to diverse audiences
+- Practiced model validation and interpretation
+
+### Operations & Customer Analytics Experience · Various Organizations
+
+_Jun 2022 – Dec 2025 · Gilbert, AZ | Laie, HI | Provo, UT_
+
+- Held multiple customer-facing and operations roles
+- Balanced work responsibilities with academic commitments
+- Developed strong time management and communication skills
+
+---
+
+## Skills
+
+- **Programming:** Python, R, Java
+- **Statistics:** EDA, regression, experimental design
+- **Visualization:** Data storytelling, plots, summaries
+- **Tools:** Excel, Git
+
+---
+
+## Get to Know Me
+
+**Hobbies & Interests:** Hiking, skiing, snowboarding, wakeboarding, surfing, reading, cooking, traveling, working out, and spending time with family and friends.
+
+**Strengths:** Relator, Responsibility, Adaptability, Connectedness, Strategic
+
+![Jillian Baker](IMG_6054.jpg)

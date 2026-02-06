@@ -5,9 +5,28 @@
   --primary-color: #2E86AB;
   --secondary-color: #A23B72;
   --accent-color: #F18F01;
-  --text-color: #333;
+  --text-color: #1f2937;
   --light-gray: #f8f9fa;
   --border-color: #dee2e6;
+}
+
+body {
+  color: var(--text-color);
+  font-family: "Ringside Narrow", Arial, sans-serif;
+}
+
+h2, h3 {
+  color: var(--primary-color);
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Navigation customizations */

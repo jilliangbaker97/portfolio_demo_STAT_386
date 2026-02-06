@@ -60,9 +60,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About Me",
+    "title": "",
     "section": "",
-    "text": "Write a brief introduction about yourself here. Include:\n\nYour academic background\nYour interest in data science\nYour career goals\nAny relevant experience or projects"
+    "text": "Code"
   },
   {
     "objectID": "about.html#background",
@@ -74,9 +74,9 @@
   {
     "objectID": "about.html#education",
     "href": "about.html#education",
-    "title": "About Me",
+    "title": "",
     "section": "Education",
-    "text": "Education\n\n[Your Degree] - [University Name], [Year]\nRelevant Coursework: Statistics, Data Analysis, Programming, etc."
+    "text": "Education\n\nBrigham Young University\nStatistics: Data Analytics Emphasis\nJan 2025 – Dec 2027\n\n\nBrigham Young University–Hawaii\nComputer Science, Accounting, and Anthropology coursework\nAug 2023 – Jul 2024"
   },
   {
     "objectID": "about.html#skills-interests",
@@ -118,5 +118,40 @@
     "crumbs": [
       "Final Project"
     ]
+  },
+  {
+    "objectID": "AboutMe.html",
+    "href": "AboutMe.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\n\nJillian Baker\n\n\nStatistics · Data Analytics · BYU  &lt;br&gt;\n&lt;a href=\"https://www.linkedin.com/in/jillian-baker-48093b284\"\n   style=\"opacity:0.85;\"&gt;\n   My LinkedIn↗\n\n\n\n\nIntroduction\nStatistics major with a Data Science emphasis at Brigham Young University, expecting to graduate in 2027. I am currently developing strong analytical and problem-solving skills to prepare for a career in data-driven decision making. My coursework is equipping me with a solid foundation in statistical methods, data analysis, and programming, and I’m eager to apply these skills in real-world projects and internships.\nInterested in using data science to uncover insights, optimize processes, and support strategic decision-making. As I continue my studies, I’m building experience with tools such as R and Python and gaining a deeper understanding of data visualization, statistical modeling, and applied analytics.\n\nEducation\nBrigham Young University\nStatistics: Data Analytics Emphasis Jan 2025 – Dec 2027\nBrigham Young University-Hawaii\nComputer Science, Accounting, And Anthropology coursework Aug 2023 - July 2024\n\nExperience\nResearch Assistant · Brigham Young University\nJan 2025 – Jun 2025 · Provo, UT (Hybrid)\n\nBuilt Python scripts to extract targeted records from large genealogical databases\nAutomated data cleaning and transformation pipelines\nExported structured CSV datasets for statistical modeling and storytelling\n\nOfficer – Data Science Association · Brigham Young University Sep 2025 – Present · Provo, UT\n\nDesigned and distributed event flyers and promotional materials to advertise association events\nCoordinated email outreach to professors and students to increase awareness and attendance\nHelped grow and maintain consistent event attendance of 20–30 participants per event\nSupported community building and engagement within the university data science community\n\nData Science & Statistical Modeling Projects · Brigham Young University Aug 2025 – Present · Provo, UT\n\nPerformed exploratory data analysis (EDA) using Python and R to identify trends and anomalies\nApplied statistical inference, regression, and experimental design techniques to real-world datasets\nCreated visualizations and summaries to communicate insights to technical and non-technical audiences\nPracticed model validation and interpretation to support data-driven decision-making\n\nOperations & Customer Analytics Experience · Various Organizations (Baker Cleaning, Chunky Cookies, Air Guitar, BYU JFSB) Jun 2022 – Dec 2025 · Gilbert, AZ | Laie, HI | Provo, UT (On-site)\n\nHeld multiple customer-facing and operations roles requiring reliability, accuracy, and teamwork\nBalanced work responsibilities with academic commitments\nDeveloped strong time management and communication skills\n\n\nSkills\n\n\n\nCategory\nSkills\n\n\n\n\nProgramming\nPython, R, Java\n\n\nStatistics\nEDA, regression, experimental design\n\n\nVisualization\nData storytelling, plots, summaries\n\n\nTools\nExcel, Git\n\n\n\n\nGet to Know Me\n\nHobbies & Interests: Hiking, Skiing, Skiing, Snowboarding, Wakeboarding, Wakesurfing, Surfing, reading, cooking, traveling, working out, spending time with family and friends\n\n\nStrengths: Relator, Responsibility, Adaptability, Connectedness, Strategic\n\n\n\n\nJillian Baker headshot"
+  },
+  {
+    "objectID": "about.html#introduction",
+    "href": "about.html#introduction",
+    "title": "",
+    "section": "Introduction",
+    "text": "Introduction\nStatistics major with a Data Science emphasis at Brigham Young University, expecting to graduate in 2027. I am currently developing strong analytical and problem-solving skills to prepare for a career in data-driven decision making.\nInterested in using data science to uncover insights, optimize processes, and support strategic decision-making. As I continue my studies, I’m building experience with tools such as R and Python and gaining a deeper understanding of data visualization, statistical modeling, and applied analytics."
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "",
+    "section": "Experience",
+    "text": "Experience\n\nResearch Assistant · Brigham Young University\nJan 2025 – Jun 2025 · Provo, UT (Hybrid)\n\nBuilt Python scripts to extract targeted records from large genealogical databases\nAutomated data cleaning and transformation pipelines\nExported structured CSV datasets for statistical modeling and storytelling\n\n\n\nOfficer – Data Science Association · Brigham Young University\nSep 2025 – Present · Provo, UT\n\nDesigned and distributed event flyers and promotional materials\nCoordinated email outreach to professors and students\nHelped grow consistent attendance of 20–30 participants per event\nSupported community building within the data science community\n\n\n\nData Science & Statistical Modeling Projects · Brigham Young University\nAug 2025 – Present · Provo, UT\n\nPerformed exploratory data analysis (EDA) using Python and R\nApplied regression, inference, and experimental design techniques\nCreated visualizations to communicate insights to diverse audiences\nPracticed model validation and interpretation\n\n\n\nOperations & Customer Analytics Experience · Various Organizations\nJun 2022 – Dec 2025 · Gilbert, AZ | Laie, HI | Provo, UT\n\nHeld multiple customer-facing and operations roles\nBalanced work responsibilities with academic commitments\nDeveloped strong time management and communication skills"
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "",
+    "section": "Skills",
+    "text": "Skills\n\nProgramming: Python, R, Java\nStatistics: EDA, regression, experimental design\nVisualization: Data storytelling, plots, summaries\nTools: Excel, Git"
+  },
+  {
+    "objectID": "about.html#get-to-know-me",
+    "href": "about.html#get-to-know-me",
+    "title": "",
+    "section": "Get to Know Me",
+    "text": "Get to Know Me\nHobbies & Interests: Hiking, skiing, snowboarding, wakeboarding, surfing, reading, cooking, traveling, working out, and spending time with family and friends.\nStrengths: Relator, Responsibility, Adaptability, Connectedness, Strategic\n\n\n\nJillian Baker"
   }
 ]
