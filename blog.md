@@ -1,12 +1,11 @@
 # From Raw CSV to Clean Dataset in 10 Steps
 
 ## A Reproducible Data Cleaning Workflow in Python
+Raw datasets are rarely analysis-ready. Column names may be inconsistent, data types incorrect, missing values unexplained, and duplicate rows quietly distorting results. At first glance, a CSV file may appear usable—but once explored more carefully, small issues quickly compound into larger problems. If these issues go unchecked, exploratory data analysis (EDA) can become misleading, and any models built on top of the data may produce unreliable conclusions.
 
-Raw datasets are almost never analysis-ready. Column names are inconsistent, data types are incorrect, missing values appear without explanation, and duplicates quietly distort results. At first glance, a CSV file may look usable—but once you begin exploring it, small issues quickly compound into larger problems. If these issues go unchecked, exploratory data analysis (EDA) can become misleading, and any models built on top of the data may produce unreliable conclusions.
+In real-world settings, data rarely comes clean. Industry estimates often suggest that data scientists spend **60–80% of their time cleaning and preparing data** rather than building models. While modeling and visualization often receive the most attention, high-quality analysis depends on well-structured, trustworthy data.
 
-In real-world settings, data rarely comes clean. In fact, it is commonly said that data scientists spend **60–80% of their time cleaning and preparing data** rather than building models. While modeling and visualization often receive the most attention, high-quality analysis depends on well-structured, trustworthy data.
-
-This is where a **structured, reproduceable workflow** becomes essential. Instead of cleaning data randomly or reactively, following a consistent step-by-step process improves clarity, reproducibility, and precision. A defined workflow helps prevent simple mistakes—such as overwriting raw files or misinterpreting data types—and creates a solid foundation for everything that follows. In this post, I’ll walk through a practical 10-step process for transforming a raw CSV file into a clean, analysis-ready dataset.
+This is where a **structured, reproducible workflow** becomes essential. Instead of cleaning data randomly or reactively, following a consistent step-by-step process improves clarity, reproducibility, and precision. A defined workflow helps prevent simple mistakes—such as overwriting raw files or misinterpreting data types—and creates a solid foundation for everything that follows. In this post, I’ll walk through a practical 10-step process for transforming a raw CSV file into a clean, analysis-ready dataset.
 
 Common issues in raw datasets include:
 
@@ -21,6 +20,8 @@ Common issues in raw datasets include:
 | Messy Dataset | Clean Dataset |
 |---------------|--------------|
 | ![Messy CSV showing inconsistent column names and formatting issues](/images/messy.png) | ![Clean CSV showing standardized column names and formatted values](/images/clean.png) |
+
+The raw dataset contains inconsistent capitalization, mixed date formats, and currency symbols embedded within numeric fields. After applying the workflow, the cleaned dataset reflects standardized naming conventions, properly typed variables, and a structure ready for reliable analysis.
 ---
 
 ## The 10-Step Workflow
@@ -33,6 +34,7 @@ import numpy as np
 ```
 
 Reproducible research, where data, code, and methods are documented so that the same analysis can be re-run later, is a foundational concept in scientific data work. It promotes transparency and ensures that results can be verified, audited, or extended by others. Just as importantly, reproducibility benefits your future self. When every transformation and decision is clearly recorded, you can retrace your steps months later without relying on memory or guesswork. This significantly reduces errors caused by undocumented changes or inconsistent processes.
+
 Consistency plays a major role in making reproducibility practical. By following the same structured cleaning workflow for each dataset, you reduce the time spent deciding what to do next and increase the time spent understanding the data itself. Repeating a clear process builds familiarity and confidence, allowing you to identify issues more quickly. It also prevents scrambling when a dataset feels overwhelming or unfamiliar. Instead of reacting randomly to messy data, you move through a deliberate sequence of steps—turning chaos into a manageable, repeatable system.
 
 ### Step 2: Load the Data
@@ -66,7 +68,7 @@ Maintaining consistent naming conventions across all datasets supports reproduci
 df.isnull().sum()
 df = df.dropna()
 ```
-The [`dropna()` function](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html) removes rows or columns that contain missing (NA) values.. By default, it drops any row with at least one missing value, though this behavior can be adjusted with parameters. While this can simplify a dataset quickly, it should be used with caution. Automatically removing rows may discard meaningful observations, especially if the missingness is limited to a single variable that is not central to your analysis.
+The [`dropna()` function](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html) removes rows or columns that contain missing (NA) values. By default, it drops any row with at least one missing value, though this behavior can be adjusted with parameters. While this can simplify a dataset quickly, it should be used with caution. Automatically removing rows may discard meaningful observations, especially if the missingness is limited to a single variable that is not central to your analysis.
 Before using dropna(), it is important to consider whether complete cases are truly required. In some analyses, every column must contain a value for the observation to be usable. In other situations, however, a row with one missing entry may still provide valuable information. Removing it could reduce sample size or introduce bias if the missing data follows a pattern.
 A better practice is to first assess the extent and structure of missing values. From there, you can decide whether to drop observations, impute values, or leave them as-is depending on your analytical goals. Thoughtful handling of missing data leads to more reliable and transparent results.
 
@@ -105,3 +107,5 @@ Data cleaning is the foundation of reliable analysis. By following this structur
 The next time you download a dataset, resist the urge to jump straight into visualization or modeling. Instead, walk through these ten steps deliberately and document each transformation. You’ll not only improve your results—you’ll build a reproducible system you can reuse across projects.
 
 In a future post, I’ll apply this workflow to a real-world dataset and demonstrate how structured cleaning improves downstream analysis.
+
+Reliable analysis begins with reliable data.
