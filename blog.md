@@ -22,6 +22,7 @@ Common issues in raw datasets include:
 | ![Messy CSV showing inconsistent column names and formatting issues](/images/messy.png) | ![Clean CSV showing standardized column names and formatted values](/images/clean.png) |
 
 The raw dataset contains inconsistent capitalization, mixed date formats, and currency symbols embedded within numeric fields. After applying the workflow, the cleaned dataset reflects standardized naming conventions, properly typed variables, and a structure ready for reliable analysis.
+
 ---
 
 ## The 10-Step Workflow
