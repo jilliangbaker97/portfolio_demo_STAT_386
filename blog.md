@@ -1,6 +1,3 @@
-<div style="font-family:'Ringside Narrow'; color:#fff; letter-spacing:0.08em;">
-
-
 # From Raw CSV to Clean Dataset in 10 Steps: A Reproducible Data Cleaning Workflow in Python
 
 Raw datasets are almost never analysis-ready. Column names are inconsistent, data types are incorrect, missing values appear without explanation, and duplicates quietly distort results. At first glance, a CSV file may look usable—but once you begin exploring it, small issues quickly compound into larger problems. If these issues go unchecked, exploratory data analysis (EDA) can become misleading, and any models built on top of the data may produce unreliable conclusions.
