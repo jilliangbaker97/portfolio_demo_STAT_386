@@ -1,0 +1,242 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "about.html#introduction",
+    "href": "about.html#introduction",
+    "title": "",
+    "section": "Introduction",
+    "text": "Introduction\nStatistics major with a Data Science emphasis at Brigham Young University, expecting to graduate in 2027. I am currently developing strong analytical and problem-solving skills to prepare for a career in data-driven decision making.\nInterested in using data science to uncover insights, optimize processes, and support strategic decision-making. As I continue my studies, I’m building experience with tools such as R and Python and gaining a deeper understanding of data visualization, statistical modeling, and applied analytics."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "",
+    "section": "Education",
+    "text": "Education\n\nBrigham Young University\nStatistics: Data Analytics Emphasis\nJan 2025 – Dec 2027\n\n\nBrigham Young University–Hawaii\nComputer Science, Accounting, and Anthropology coursework\nAug 2023 – Jul 2024"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "",
+    "section": "Experience",
+    "text": "Experience\n\nResearch Assistant · Brigham Young University\nJan 2025 – Jun 2025 · Provo, UT (Hybrid)\n\nBuilt Python scripts to extract targeted records from large genealogical databases\nAutomated data cleaning and transformation pipelines\nExported structured CSV datasets for statistical modeling and storytelling\n\n\n\nOfficer – Data Science Association · Brigham Young University\nSep 2025 – Present · Provo, UT\n\nDesigned and distributed event flyers and promotional materials\nCoordinated email outreach to professors and students\nHelped grow consistent attendance of 20–30 participants per event\nSupported community building within the data science community\n\n\n\nData Science & Statistical Modeling Projects · Brigham Young University\nAug 2025 – Present · Provo, UT\n\nPerformed exploratory data analysis (EDA) using Python and R\nApplied regression, inference, and experimental design techniques\nCreated visualizations to communicate insights to diverse audiences\nPracticed model validation and interpretation\n\n\n\nOperations & Customer Analytics Experience · Various Organizations\nJun 2022 – Dec 2025 · Gilbert, AZ | Laie, HI | Provo, UT\n\nHeld multiple customer-facing and operations roles\nBalanced work responsibilities with academic commitments\nDeveloped strong time management and communication skills"
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "",
+    "section": "Skills",
+    "text": "Skills\n\nProgramming: Python, R, Java\nStatistics: EDA, regression, experimental design\nVisualization: Data storytelling, plots, summaries\nTools: Excel, Git"
+  },
+  {
+    "objectID": "about.html#get-to-know-me",
+    "href": "about.html#get-to-know-me",
+    "title": "",
+    "section": "Get to Know Me",
+    "text": "Get to Know Me\nHobbies & Interests: Hiking, skiing, snowboarding, wakeboarding, surfing, reading, cooking, traveling, working out, and spending time with family and friends.\nStrengths: Relator, Responsibility, Adaptability, Connectedness, Strategic\n\n\n\nJillian Baker"
+  },
+  {
+    "objectID": "blog/DataAcquisitionBlog.html",
+    "href": "blog/DataAcquisitionBlog.html",
+    "title": "Data Acquisition Blog",
+    "section": "",
+    "text": "Last semester, every Wednesday night my apartment turned into a little sanctuary. Friends from all corners of my life would pile in — a smorgasbord of different people — and we’d spend the night watching Survivor together, snacking on whatever treat we’d picked for the week. It was one of those rare, low-pressure rituals that helped everyone decompress mid-week. No agenda, just good company and great TV.\nWatching such different people bond over the show made me wonder if different types of people actually play the game differently.\nThis got me thinking: who actually does well on this show, and why? Are there patterns in age, profession, or background that predict how far someone goes? As someone learning data science, I figured there was no better way to find out than to go get the data myself.\n\n\n\nDoes a contestant’s age, profession, or hometown predict how far they go in Survivor?\nSurvivor is equal parts social game, physical endurance, and strategic maneuvering. I wanted to know whether any measurable background characteristic correlates with success — or whether the game is truly anyone’s to win.\n\n\n\n\nBefore writing a single line of code, I checked Wikipedia’s robots.txt file to confirm that scraping is permitted. Wikipedia explicitly allows bots to access most of its content, and all contestant data on the site is publicly available and crowd-maintained. No login, no paywall, no personal or private information involved.\nI also followed responsible scraping practices: - Used a descriptive User-Agent header to identify my requests - Scraped only what I needed (two specific tables) - Made no repeated or rapid-fire requests\n\n\n\n\nWikipedia hosts a detailed page listing every Survivor (US) contestant by season, including their age, hometown, profession, and finish placement. I targeted seasons 31–50 (2016–2026), which gave a large enough sample while keeping the data relatively modern.\nThe core scraping logic is straightforward with pandas and requests:\nimport requests\nimport pandas as pd\nfrom io import StringIO\n\nurl = 'https://en.wikipedia.org/wiki/List_of_Survivor_(American_TV_series)_contestants'\nheaders = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}\n\nresponse = requests.get(url, headers=headers)\nall_tables = pd.read_html(StringIO(response.text))\n\nrecent_seasons = all_tables[4]  # seasons 41–50\nother_seasons  = all_tables[3]  # seasons 31–40\ndf = pd.concat([recent_seasons, other_seasons], ignore_index=True)\npd.read_html() does the heavy lifting — it detects and parses all HTML tables on the page into a list of DataFrames. From there it’s just a matter of identifying which table indices correspond to the seasons you want and merging them.\n\n\n\n\nRaw Wikipedia data is messy. Here’s what needed fixing:\n\nFootnote symbols (◊, ^, ‡) were embedded in contestant names and stripped with regex\nFinish placements were stored as strings like \"1st\", \"Winner\", \"Runner-up\" — standardized and converted to integers\nSeason names (e.g., “Survivor: David vs. Goliath”) were mapped to their season numbers\nHometowns were split into separate city and state columns, with Canadian entries flagged separately\nProfession text was freeform, so I wrote a keyword-based categorizer to group ~300 unique job titles into 11 broad categories (Business, Medical, Student, Legal, etc.)\n\nOne important derived column: Finish Percentile, which normalizes placement across seasons of different cast sizes:\nFinishPct = (1 - (Finish - 1) / (SeasonSize - 1)) × 100\nThis means 100 = winner and 0 = first boot, regardless of how many people were cast — making seasons directly comparable.\n\n\n\n\n\n\n\nFeature\nDescription\n\n\n\n\nName\nContestant name\n\n\nSeason\nSeason number (31–50)\n\n\nAge\nAge at time of filming\n\n\nHometown\nContestant’s listed hometown\n\n\nState\nExtracted U.S. state\n\n\nProfession\nRaw profession text from Wikipedia\n\n\nProfCategory\nGrouped profession category\n\n\nFinish\nFinal placement (1 = winner)\n\n\nSeasonSize\nNumber of contestants that season\n\n\nFinishPct\nNormalized finish (0–100, higher = better)\n\n\nAgeGroup\nBinned age category (e.g., 25–29, 30–34)\n\n\n\nFinal dataset: ~380 rows × 11 columns after cleaning and deduplication.\nA few quality notes worth knowing: - Returning players appear as separate rows since each appearance is independent - Some hometown entries lacked a U.S. state and were excluded from state-level maps - Profession text is self-reported and varies in specificity — the category groupings are a useful approximation, not a perfect taxonomy\n\n\n\n\nA few highlights from the analysis:\n\nAge doesn’t predict success. The relationship between age and finish percentile is essentially flat. Survivor really can be won at any age.\nBusiness/consulting professionals are the most represented group — dealmaking and relationship management are core Survivor skills, so this tracks.\nAverage contestant age has crept upward in recent seasons, likely reflecting a shift toward casting returning players.\nLos Angeles, New York, and Brooklyn dominate the hometown map — partly population size, partly proximity to entertainment casting pipelines.\n\nHere’s a look at two of the standout visuals. Note that both charts are filtered to groups with sufficient sample sizes to keep the results meaningful:\nAverage Performance by State (U.S. states with 5+ contestants only)  \nAverage Performance by Profession (profession categories with 5+ contestants only)  \n\n\n\n\n\n📄 Wikipedia: List of Survivor Contestants — the data source\n🤖 Wikipedia robots.txt — confirms scraping is permitted\n📦 pandas.read_html() docs — the workhorse of this project\n📊 Plotly Express docs — used for all visualizations\n💻 Project GitHub Repo — full code and dataset\n\n\nWhether or not you have a Wednesday night Survivor crew of your own, I hope this gives you a useful starting point for scraping and analyzing structured data from Wikipedia. The same pattern — requests → read_html → clean → analyze — transfers easily to almost any Wikipedia list page.",
+    "crumbs": [
+      "Data Acquisition Blog"
+    ]
+  },
+  {
+    "objectID": "blog/DataAcquisitionBlog.html#the-motivating-question",
+    "href": "blog/DataAcquisitionBlog.html#the-motivating-question",
+    "title": "Data Acquisition Blog",
+    "section": "",
+    "text": "Does a contestant’s age, profession, or hometown predict how far they go in Survivor?\nSurvivor is equal parts social game, physical endurance, and strategic maneuvering. I wanted to know whether any measurable background characteristic correlates with success — or whether the game is truly anyone’s to win.",
+    "crumbs": [
+      "Data Acquisition Blog"
+    ]
+  },
+  {
+    "objectID": "blog/DataAcquisitionBlog.html#is-it-ethical-to-scrape-this-data",
+    "href": "blog/DataAcquisitionBlog.html#is-it-ethical-to-scrape-this-data",
+    "title": "Data Acquisition Blog",
+    "section": "",
+    "text": "Before writing a single line of code, I checked Wikipedia’s robots.txt file to confirm that scraping is permitted. Wikipedia explicitly allows bots to access most of its content, and all contestant data on the site is publicly available and crowd-maintained. No login, no paywall, no personal or private information involved.\nI also followed responsible scraping practices: - Used a descriptive User-Agent header to identify my requests - Scraped only what I needed (two specific tables) - Made no repeated or rapid-fire requests",
+    "crumbs": [
+      "Data Acquisition Blog"
+    ]
+  },
+  {
+    "objectID": "blog/DataAcquisitionBlog.html#getting-the-data",
+    "href": "blog/DataAcquisitionBlog.html#getting-the-data",
+    "title": "Data Acquisition Blog",
+    "section": "",
+    "text": "Wikipedia hosts a detailed page listing every Survivor (US) contestant by season, including their age, hometown, profession, and finish placement. I targeted seasons 31–50 (2016–2026), which gave a large enough sample while keeping the data relatively modern.\nThe core scraping logic is straightforward with pandas and requests:\nimport requests\nimport pandas as pd\nfrom io import StringIO\n\nurl = 'https://en.wikipedia.org/wiki/List_of_Survivor_(American_TV_series)_contestants'\nheaders = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}\n\nresponse = requests.get(url, headers=headers)\nall_tables = pd.read_html(StringIO(response.text))\n\nrecent_seasons = all_tables[4]  # seasons 41–50\nother_seasons  = all_tables[3]  # seasons 31–40\ndf = pd.concat([recent_seasons, other_seasons], ignore_index=True)\npd.read_html() does the heavy lifting — it detects and parses all HTML tables on the page into a list of DataFrames. From there it’s just a matter of identifying which table indices correspond to the seasons you want and merging them.",
+    "crumbs": [
+      "Data Acquisition Blog"
+    ]
+  },
+  {
+    "objectID": "blog/DataAcquisitionBlog.html#cleaning-transforming-the-data",
+    "href": "blog/DataAcquisitionBlog.html#cleaning-transforming-the-data",
+    "title": "Data Acquisition Blog",
+    "section": "",
+    "text": "Raw Wikipedia data is messy. Here’s what needed fixing:\n\nFootnote symbols (◊, ^, ‡) were embedded in contestant names and stripped with regex\nFinish placements were stored as strings like \"1st\", \"Winner\", \"Runner-up\" — standardized and converted to integers\nSeason names (e.g., “Survivor: David vs. Goliath”) were mapped to their season numbers\nHometowns were split into separate city and state columns, with Canadian entries flagged separately\nProfession text was freeform, so I wrote a keyword-based categorizer to group ~300 unique job titles into 11 broad categories (Business, Medical, Student, Legal, etc.)\n\nOne important derived column: Finish Percentile, which normalizes placement across seasons of different cast sizes:\nFinishPct = (1 - (Finish - 1) / (SeasonSize - 1)) × 100\nThis means 100 = winner and 0 = first boot, regardless of how many people were cast — making seasons directly comparable.",
+    "crumbs": [
+      "Data Acquisition Blog"
+    ]
+  },
+  {
+    "objectID": "blog/DataAcquisitionBlog.html#dataset-overview",
+    "href": "blog/DataAcquisitionBlog.html#dataset-overview",
+    "title": "Data Acquisition Blog",
+    "section": "",
+    "text": "Feature\nDescription\n\n\n\n\nName\nContestant name\n\n\nSeason\nSeason number (31–50)\n\n\nAge\nAge at time of filming\n\n\nHometown\nContestant’s listed hometown\n\n\nState\nExtracted U.S. state\n\n\nProfession\nRaw profession text from Wikipedia\n\n\nProfCategory\nGrouped profession category\n\n\nFinish\nFinal placement (1 = winner)\n\n\nSeasonSize\nNumber of contestants that season\n\n\nFinishPct\nNormalized finish (0–100, higher = better)\n\n\nAgeGroup\nBinned age category (e.g., 25–29, 30–34)\n\n\n\nFinal dataset: ~380 rows × 11 columns after cleaning and deduplication.\nA few quality notes worth knowing: - Returning players appear as separate rows since each appearance is independent - Some hometown entries lacked a U.S. state and were excluded from state-level maps - Profession text is self-reported and varies in specificity — the category groupings are a useful approximation, not a perfect taxonomy",
+    "crumbs": [
+      "Data Acquisition Blog"
+    ]
+  },
+  {
+    "objectID": "blog/DataAcquisitionBlog.html#what-i-found",
+    "href": "blog/DataAcquisitionBlog.html#what-i-found",
+    "title": "Data Acquisition Blog",
+    "section": "",
+    "text": "A few highlights from the analysis:\n\nAge doesn’t predict success. The relationship between age and finish percentile is essentially flat. Survivor really can be won at any age.\nBusiness/consulting professionals are the most represented group — dealmaking and relationship management are core Survivor skills, so this tracks.\nAverage contestant age has crept upward in recent seasons, likely reflecting a shift toward casting returning players.\nLos Angeles, New York, and Brooklyn dominate the hometown map — partly population size, partly proximity to entertainment casting pipelines.\n\nHere’s a look at two of the standout visuals. Note that both charts are filtered to groups with sufficient sample sizes to keep the results meaningful:\nAverage Performance by State (U.S. states with 5+ contestants only)  \nAverage Performance by Profession (profession categories with 5+ contestants only)",
+    "crumbs": [
+      "Data Acquisition Blog"
+    ]
+  },
+  {
+    "objectID": "blog/DataAcquisitionBlog.html#resources-further-reading",
+    "href": "blog/DataAcquisitionBlog.html#resources-further-reading",
+    "title": "Data Acquisition Blog",
+    "section": "",
+    "text": "📄 Wikipedia: List of Survivor Contestants — the data source\n🤖 Wikipedia robots.txt — confirms scraping is permitted\n📦 pandas.read_html() docs — the workhorse of this project\n📊 Plotly Express docs — used for all visualizations\n💻 Project GitHub Repo — full code and dataset\n\n\nWhether or not you have a Wednesday night Survivor crew of your own, I hope this gives you a useful starting point for scraping and analyzing structured data from Wikipedia. The same pattern — requests → read_html → clean → analyze — transfers easily to almost any Wikipedia list page.",
+    "crumbs": [
+      "Data Acquisition Blog"
+    ]
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects Overview",
+    "section": "",
+    "text": "Description: Pick a dataset and explore it to discover insights and answer questions.\n\n\n\nDescription: Find an interesting data source, collect the data, and prepare it for analysis.\n\n\n\nDescription: A comprehensive project that shows off my data science skills.",
+    "crumbs": [
+      "Projects Overview"
+    ]
+  },
+  {
+    "objectID": "projects/index.html#all-projects",
+    "href": "projects/index.html#all-projects",
+    "title": "Projects Overview",
+    "section": "",
+    "text": "Description: Pick a dataset and explore it to discover insights and answer questions.\n\n\n\nDescription: Find an interesting data source, collect the data, and prepare it for analysis.\n\n\n\nDescription: A comprehensive project that shows off my data science skills.",
+    "crumbs": [
+      "Projects Overview"
+    ]
+  },
+  {
+    "objectID": "projects/eda.html",
+    "href": "projects/eda.html",
+    "title": "EDA Project",
+    "section": "",
+    "text": "This is coming down the pipeline. Check again later.",
+    "crumbs": [
+      "EDA Project"
+    ]
+  },
+  {
+    "objectID": "projects/data-acquisition.html",
+    "href": "projects/data-acquisition.html",
+    "title": "Data Acquisition Project",
+    "section": "",
+    "text": "This is coming down the pipeline. Check again later.",
+    "crumbs": [
+      "Data Acquisition Project"
+    ]
+  },
+  {
+    "objectID": "projects/final-project.html",
+    "href": "projects/final-project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "This is coming down the pipeline. Check again later.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "blog/blog.html",
+    "href": "blog/blog.html",
+    "title": "",
+    "section": "",
+    "text": "Code",
+    "crumbs": [
+      "From Raw CSV to Clean Dataset in 10 Steps"
+    ]
+  },
+  {
+    "objectID": "blog/blog.html#a-reproducible-data-cleaning-workflow-in-python",
+    "href": "blog/blog.html#a-reproducible-data-cleaning-workflow-in-python",
+    "title": "",
+    "section": "A Reproducible Data Cleaning Workflow in Python",
+    "text": "A Reproducible Data Cleaning Workflow in Python\nRaw datasets are rarely analysis-ready. Column names may be inconsistent, data types incorrect, missing values unexplained, and duplicate rows quietly distorting results. At first glance, a CSV file may appear usable—but once explored more carefully, small issues quickly compound into larger problems. If these issues go unchecked, exploratory data analysis (EDA) can become misleading, and any models built on top of the data may produce unreliable conclusions.\nIn real-world settings, data rarely comes clean. Industry estimates often suggest that data scientists spend 60–80% of their time cleaning and preparing data rather than building models. While modeling and visualization often receive the most attention, high-quality analysis depends on well-structured, trustworthy data.\nThis is where a structured, reproducible workflow becomes essential. Instead of cleaning data randomly or reactively, following a consistent step-by-step process improves clarity, reproducibility, and precision. A defined workflow helps prevent simple mistakes—such as overwriting raw files or misinterpreting data types—and creates a solid foundation for everything that follows. In this post, I’ll walk through a practical 10-step process for transforming a raw CSV file into a clean, analysis-ready dataset.\nCommon issues in raw datasets include:\n\nInconsistent column names\n\nMixed or incorrect data types\n\nMissing values without explanation\n\nDuplicate rows\n\nFormatting inconsistencies (extra whitespace, currency symbols, mixed date formats)\n\n\nBefore and After Cleaning\n\n\n\n\n\n\n\nMessy Dataset\nClean Dataset\n\n\n\n\n\n\n\n\n\nThe raw dataset contains inconsistent capitalization, mixed date formats, and currency symbols embedded within numeric fields. After applying the workflow, the cleaned dataset reflects standardized naming conventions, properly typed variables, and a structure ready for reliable analysis.",
+    "crumbs": [
+      "From Raw CSV to Clean Dataset in 10 Steps"
+    ]
+  },
+  {
+    "objectID": "blog/blog.html#the-10-step-workflow",
+    "href": "blog/blog.html#the-10-step-workflow",
+    "title": "",
+    "section": "The 10-Step Workflow",
+    "text": "The 10-Step Workflow\n\nStep 1: Import Libraries\nimport pandas as pd\nimport numpy as np\nReproducible research, where data, code, and methods are documented so that the same analysis can be re-run later, is a foundational concept in scientific data work. It promotes transparency and ensures that results can be verified, audited, or extended by others. Just as importantly, reproducibility benefits your future self. When every transformation and decision is clearly recorded, you can retrace your steps months later without relying on memory or guesswork. This significantly reduces errors caused by undocumented changes or inconsistent processes.\nConsistency plays a major role in making reproducibility practical. By following the same structured cleaning workflow for each dataset, you reduce the time spent deciding what to do next and increase the time spent understanding the data itself. Repeating a clear process builds familiarity and confidence, allowing you to identify issues more quickly. It also prevents scrambling when a dataset feels overwhelming or unfamiliar. Instead of reacting randomly to messy data, you move through a deliberate sequence of steps—turning chaos into a manageable, repeatable system.\n\n\nStep 2: Load the Data\ndf = pd.read_csv(\"data/raw_data.csv\")\nKeeping raw data untouched is essential in any data workflow. If something goes wrong during cleaning or you later decide to approach the analysis differently, you need the ability to restart from the original source. Overwriting or modifying raw files removes that safety net.\nIt is especially risky to delete values simply because they seem unusual or unclear. For example, what appears to be an “unknown” or outlier value may actually contain meaningful information. Removing or altering it too early can limit your understanding of the dataset and potentially bias your analysis. Preserving the raw data ensures that all original inputs remain available for review. This allows you to revisit assumptions, test alternative cleaning strategies, or reuse the dataset for a different project with new research questions. A best practice is to treat raw data as read-only and perform all cleaning and transformations on a separate copy. That way, your workflow remains both flexible and reproducible. Reproducibility is widely recognized as a core principle of scientific computing and data analysis (see The Turing Way’s guide to reproducible research).\n\n\nStep 3: Inspect the Dataset\ndf.head()\ndf.info()\ndf.describe()\nCarefully inspecting a dataset prevents downstream errors by revealing its current structure and potential inconsistencies. Reviewing column names, data types, and summary statistics helps identify issues early, such as mislabeled variables or unexpected missing values. It also highlights whether the data needs to be reshaped—through melting, pivoting, or aggregation—before analysis can proceed. By thoroughly examining the dataset upfront, you reduce the risk of mistakes later in the workflow and ensure a more reliable and efficient cleaning process.\n\n\nStep 4: Standardize Column Names\ndf.columns = df.columns.str.strip().str.lower().str.replace(\" \", \"_\")\nClean naming conventions typically use lowercase letters with underscores in place of spaces (often called snake_case). This format improves readability and keeps column names consistent across datasets and projects. Spaces in column names can create subtle issues, especially when referencing variables in code. For example, column names with whitespace may require bracket notation instead of dot notation, which can interrupt workflow and increase the chance of small syntax errors. Maintaining consistent naming conventions across all datasets supports reproducibility. When column names follow predictable patterns, you can reuse code more easily without constantly renaming variables or adjusting scripts. Over time, this consistency reduces friction in your workflow and allows you to focus on analysis rather than formatting issues. Clean, standardized naming may seem like a small detail, but it plays a significant role in creating efficient and reliable data processes.\n\n\nStep 5: Handle Missing Values\ndf.isnull().sum()\ndf = df.dropna()\nThe dropna() function removes rows or columns that contain missing (NA) values. By default, it drops any row with at least one missing value, though this behavior can be adjusted with parameters. While this can simplify a dataset quickly, it should be used with caution. Automatically removing rows may discard meaningful observations, especially if the missingness is limited to a single variable that is not central to your analysis. Before using dropna(), it is important to consider whether complete cases are truly required. In some analyses, every column must contain a value for the observation to be usable. In other situations, however, a row with one missing entry may still provide valuable information. Removing it could reduce sample size or introduce bias if the missing data follows a pattern. A better practice is to first assess the extent and structure of missing values. From there, you can decide whether to drop observations, impute values, or leave them as-is depending on your analytical goals. Thoughtful handling of missing data leads to more reliable and transparent results.\n\n\nStep 6: Fix Data Types\ndf[\"date\"] = pd.to_datetime(df[\"date\"])\ndf[\"price\"] = df[\"price\"].astype(float)\n\n\nStep 7: Remove Duplicates\ndf = df.drop_duplicates()\n\n\nStep 8: Filter or Subset Data\ndf = df[df[\"price\"] &gt; 0]\nApplying logical constraints ensures that your dataset reflects realistic and meaningful values. Constraints involve filtering out observations that violate known rules of the problem—for example, negative prices, impossible dates, or ages greater than 120. These values may result from data entry errors, formatting issues, or incorrect merges. If left unchecked, they can distort summary statistics, mislead visualizations, and negatively impact model performance. By enforcing logical boundaries based on domain knowledge, you improve data quality and ensure that your analysis is grounded in plausible, interpretable observations rather than errors.\n\n\nStep 9: Create Derived Variables\ndf[\"revenue\"] = df[\"price\"] * df[\"quantity\"]\nFeature engineering often begins during the cleaning stage because this is when raw variables are transformed into more meaningful and usable forms. As you standardize types, handle missing values, and apply logical constraints, you naturally identify opportunities to create new variables—such as calculating revenue from price and quantity, extracting month or year from a date column, or generating indicator variables from categories. These derived features can better capture underlying patterns in the data and improve model performance. Rather than viewing cleaning and feature engineering as separate steps, it is more accurate to see cleaning as the foundation where thoughtful variable construction first takes shape.\n\n\nStep 10: Save the Clean Dataset\ndf.to_csv(\"data/clean_data.csv\", index=False)\nSaving the cleaned dataset as a new file is a crucial final step in maintaining a reproducible workflow. Instead of overwriting the original raw data, export the processed version to a separate location (for example, a processed or cleanfolder) using df.to_csv(“data/clean_data.csv”, index=False). Keeping raw and cleaned data separate preserves the integrity of the original source and ensures you can restart the process if needed. Separating stages of data—raw, intermediate, and cleaned—also makes your project easier to audit, debug, and extend, reinforcing a clear and organized analytical pipeline.",
+    "crumbs": [
+      "From Raw CSV to Clean Dataset in 10 Steps"
+    ]
+  },
+  {
+    "objectID": "blog/blog.html#data-cleaning-is-not-just-preparation",
+    "href": "blog/blog.html#data-cleaning-is-not-just-preparation",
+    "title": "",
+    "section": "Data cleaning is not just preparation",
+    "text": "Data cleaning is not just preparation\nData cleaning is the foundation of reliable analysis. By following this structured 10-step workflow, you transform messy CSV files into trustworthy datasets ready for exploration and modeling.\nThe next time you download a dataset, resist the urge to jump straight into visualization or modeling. Instead, walk through these ten steps deliberately and document each transformation. You’ll not only improve your results—you’ll build a reproducible system you can reuse across projects.\nIn a future post, I’ll apply this workflow to a real-world dataset and demonstrate how structured cleaning improves downstream analysis.\nReliable analysis begins with reliable data.",
+    "crumbs": [
+      "From Raw CSV to Clean Dataset in 10 Steps"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "Welcome to my data science portfolio! This site shows my journey learning data science and analytics. Here you’ll find projects that demonstrate what I’ve learned and discovered.\n\n\nThis portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages.\n\n\n\n\nProgramming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data\n\n\n\n\n\n\n\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+  },
+  {
+    "objectID": "index.html#about-this-portfolio",
+    "href": "index.html#about-this-portfolio",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "This portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
+  },
+  {
+    "objectID": "index.html#skills-im-learning",
+    "href": "index.html#skills-im-learning",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "Programming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data"
+  },
+  {
+    "objectID": "index.html#my-projects",
+    "href": "index.html#my-projects",
+    "title": "Welcome to My Data Science Portfolio",
+    "section": "",
+    "text": "Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+  }
+]
