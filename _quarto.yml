@@ -13,8 +13,6 @@ website:
         href: index.md
       - text: "About Me"
         href: about.md
-      - text: "Blog Post"
-        href: blog.md
       - text: "Projects"
         menu:
           - text: "All Projects"
@@ -26,12 +24,23 @@ website:
             href: projects/data-acquisition.qmd
           - text: "Final Project"
             href: projects/final-project.qmd
+      - text: "Blogs"
+        menu:
+          - text: "Data Acquisition Blog"
+            href: blog/DataAcquisitionBlog.md
+          - text: "Cleaning Data Blog"
+            href: blog/blog.md
     right:
       - icon: github
         href: https://github.com/jilliangbaker97
       - icon: linkedin
         href: https://www.linkedin.com/in/jillian-baker-48093b284/
+  
   sidebar:
+    - title: "Blogs"
+      contents:
+        - blog/blog.md
+        - blog/DataAcquisitionBlog.md
     - title: "Projects"
       contents:
         - projects/index.md
